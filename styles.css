@@ -1,148 +1,140 @@
 /*
  * General Structure Styling
- * Ensures the entire content is centered and has a fixed width of 1100px.
  */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px 0;
-    background-color: #f4f4f4; /* Light background for the whole page */
+    background-color: #f0f0f0; /* Light grey background for the whole page */
     color: #333;
 }
 
 .page-container {
     width: 1100px; /* **REQUIRED WIDTH** */
     margin: 0 auto; /* Center the container on the page */
-    background-color: #ffffff; /* White background for the content area */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    border-radius: 8px;
+    background-color: #e0e0e0; /* Slightly darker grey for the container body, matching the border in the preview */
+    border: 1px solid #c0c0c0; /* Subtle border for the entire content area */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /*
- * Header Styling
+ * imageContainer Styling (Top Banner)
  */
-header {
-    text-align: center;
-    border-bottom: 3px solid #007bff;
-    padding-bottom: 15px;
-    margin-bottom: 20px;
-}
-
-header h1 {
-    color: #007bff;
-    font-size: 2.5em;
+.imageContainer.banner-top {
     margin: 0;
-}
-
-/*
- * imageContainer Styling
- */
-.imageContainer {
-    margin-bottom: 30px;
-    border: 1px solid #ddd;
-    padding: 10px;
-    background-color: #f9f9f9;
-    text-align: center;
+    padding: 0;
+    background-color: white; /* Header background is white/light */
+    border-bottom: 5px solid #a0a0a0; /* Separator line between banner and table */
 }
 
 .imageContainer .header-image {
-    width: 100%; /* Make the image fill the container width (1100px) */
+    width: 100%; /* Image fills the 1100px container */
     height: auto;
     display: block;
-    border-radius: 4px;
-}
-
-.imageContainer .caption {
-    font-style: italic;
-    color: #666;
-    margin-top: 5px;
 }
 
 /*
  * Table Styling
  */
-.architecture-table {
-    width: 100%; /* The table should fill the 1100px container width */
+.design-table {
+    width: 100%; /* Table fills the 1100px container */
     border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin: 0;
 }
 
-.architecture-table thead th {
-    background-color: #343a40;
-    color: white;
-    padding: 12px;
-    font-size: 1.2em;
-    text-align: left;
-    border-bottom: 4px solid #007bff;
-}
-
-.architecture-table tbody tr {
-    border-bottom: 1px solid #e0e0e0;
-}
-
-.architecture-table tbody tr:nth-child(even) {
-    background-color: #eaf3ff; /* Light blue stripe for visual appeal */
-}
-
-/* Column Styling */
-.architecture-table td {
-    padding: 10px;
+.design-table td {
+    padding: 0; /* Important: Remove default padding for clean borders */
     vertical-align: top;
+    border: 1px solid #c0c0c0;
 }
 
-.architecture-table .image-col {
+/* Column Widths (Defined by width attribute in HTML, but confirmed here) */
+.design-table .image-col {
     width: 200px; /* **REQUIRED WIDTH** */
-    text-align: center;
-    background-color: #f0f8ff; /* Very light blue background for image columns */
-    border-right: 1px solid #ccc;
-    border-left: 1px solid #ccc;
+    background-color: #d8e0d8; /* Light green/grey background for side sections */
 }
 
-.architecture-table .text-col {
+.design-table .center-col {
     width: 600px; /* **REQUIRED WIDTH** */
-    padding: 15px;
+    background-color: #ffffff; /* White background for text/menu blocks */
+}
+
+/* Specific Row/Cell Styling to match Preview */
+
+/* Top Row - Menu Content */
+.design-table .menu-content {
+    padding: 20px 30px;
+    text-align: left;
+    background-color: #ffffff;
+}
+
+.design-table .menu-content h2 {
+    color: #4a6c4a; /* Greenish heading color */
+    font-size: 1.5em;
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+.design-table .menu-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    line-height: 1.8;
+}
+
+/* Bottom Row - Objective Content */
+.design-table .objective-content {
+    background-color: #f9f9f9; /* Very light background for the long objective text */
+    padding: 20px 30px;
     text-align: justify;
 }
 
-/* Image within the table columns */
-.architecture-table img {
-    width: 100%; /* Images fill the 200px column width */
-    height: auto;
-    display: block;
-    border-radius: 4px;
-    margin-bottom: 5px;
-    border: 1px solid #ddd;
+.design-table .objective-content h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.4em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
-.architecture-table .img-caption {
-    font-size: 0.85em;
-    font-weight: bold;
-    color: #007bff;
+/* Images within the table columns */
+.design-table img {
+    width: 100%; /* Images must fill the 200px column width */
+    height: auto;
+    display: block;
     margin-bottom: 0;
 }
 
-/* Text Content Styling */
-.architecture-table .text-col h3 {
-    color: #0056b3;
-    margin-top: 0;
-    border-bottom: 2px dashed #ccc;
-    padding-bottom: 5px;
+/* Side Text Blocks (Bottom 200px columns) */
+.side-text-block {
+    padding: 10px;
+    background-color: #d8e0d8; /* Matches the column background */
+    text-align: left;
 }
 
-.architecture-table .text-col p {
-    line-height: 1.6;
+.side-text-block h4 {
+    color: #4a6c4a; /* Greenish title */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
-/*
- * Footer Styling
- */
-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 15px;
-    border-top: 1px solid #ccc;
-    color: #777;
+.side-text-block p {
     font-size: 0.9em;
+    line-height: 1.4;
+    margin-bottom: 5px;
+}
+
+.side-text-block a {
+    color: #4a6c4a;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.side-text-block a:hover {
+    text-decoration: underline;
 }
